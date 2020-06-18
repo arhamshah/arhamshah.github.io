@@ -10,8 +10,7 @@ body{
 h1{
     height: 50px;
     padding: 5px;
-    background: #DB504A;
-    color: #FFFFFF;
+    color: #7a352a;
     text-align: center;
 }
 .container{
@@ -21,9 +20,7 @@ h1{
     float: left;
     height: 350px;
     max-width: 30%;
-    background: #FF6F59;
-    border: 1px solid black;
-    border-radius: 20px;
+    border: 2px solid black;
     padding: 15px;
     margin-top: 5%;
     margin-inline-start: 2.5%;
@@ -39,11 +36,30 @@ h1{
     float: right;
     width: 120px;
     text-align: center;
-    background-color: #FFFFFF;
     border: 1px solid black;
     border-radius: 45px;
     color: #DB504A;
     margin-bottom:15px;
+}
+#heading1{
+    background-color: rgb(229, 231, 107);
+}
+#heading2{
+    background-color: powderblue;
+    color: black;
+}
+#heading3{
+    background-color: rgb(255, 122, 168);
+    color: white;
+}
+#item1{
+    background-color: #a33c3c;
+}
+#item2{
+    background-color: chocolate;
+}
+#item3{
+    background-color: darkgray;
 }
 @media(min-width:768px) and (max-width:991px){
     .container section{
