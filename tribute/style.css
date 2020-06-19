@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    color: rgb(29, 29, 31);
+}
+.text{
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+#main{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#portrait{
+    background-color: black;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+   position: relative;
+}
+#text-div{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    color: white;
+}
+#title{
+    font-weight: 700;
+}
+#title1{
+    font-weight: 600;
+    text-align: center;
+}
+#button-link{
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    background-color: rgb(0, 113, 227);
+    min-width: 28px;
+    padding: 8px 16px;
+    border-radius: 18px;
+    margin-top: 10px;
+}
+a:link,a:visited{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+#tribute-link0:hover{
+    background-color: rgba(196, 117, 15, 0.938);
+}
+#tribute-link:hover{
+    background-color: rgba(209, 24, 24, 0.911);
+}
+#img-div{
+   max-width: 400px;
+   margin: auto;
+   margin-top: 40px;
+}
+#image{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+#img-caption{
+    text-align: right;
+    color:white;
+    font-size: 0.5em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+#tribute-info{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-block-end: 50px;
+}
+.container{
+    margin-right: 50px;
+}
+#item1{
+    width: 25%;
+    font-weight: 800;
+    font-size: 3rem;
+}
+#steve-jobs{
+    display: block;
+    text-align: right;
+}
+#item2{
+    width: 35%;
+}
+#item3{
+    width:20%;
+}
+#footer{
+    background-color: black;
+    color:rgb(243, 237, 237);
+}
+@media(min-width:768px) and (max-width:991px){
+    #text-div{
+        left: 10%;
+        top: 45%;
+    }
+    #img-div{
+        margin-top: 10%;
+        max-width: 300px;        
+    }
+    #tribute-info{
+        flex-wrap: wrap;
+        margin-left: 15px;
+    }
+    #item1{
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    #item2{
+        width: 100%;
+    }
+    #item3{
+        margin-top: 16px;
+        width: 100%;
+    }
+}
+@media(max-width:767px){
+    #portrait{
+        height: 100vh;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 10px;
+    }
+    #title{
+        text-align: center;
+    }
+    #text-div{
+       position: static;
+    }
+    #tribute-info{
+        margin-top: 10px;
+        flex-wrap: wrap;
+        margin-left: 15px;
+    }
+    #item1{
+        width: 100%;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    #item2{
+        width: 100%;
+    }
+    #item3{
+        margin-top: 16px;
+        width: 100%;
+    }    
+}
