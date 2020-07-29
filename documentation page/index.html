@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <header id="header"><h1>Git Documentation</h1></header>
+        <nav id="navbar">
+            <header>
+                <h1>Index</h1>
+            </header>
+            <ul>
+                <li class="nav-heading"><a href="#Git_Model" class="nav-link nav-heading">Git Model</a> 
+                    <ul>
+                        <li><a href="#Object_&_SHA1" class="nav-link">Object & SHA1</a></li>
+                        <li><a href="#Blob" class="nav-link">Blob</a></li>
+                        <li><a href="#Tree" class="nav-link">Tree</a></li>
+                        <li><a href="#Commit" class="nav-link">Commit</a></li>
+                        <li><a href="#Tags" class="nav-link">Tags</a></li>
+                        <li><a href="#Branch" class="nav-link">Branch</a></li>
+                    </ul>
+                </li>
+                <li class="nav-heading"><a href="#Basic_Operations" class="nav-link nav-heading">Basic Operations</a>
+                    <ul>
+                        <li><a href="#Configuration" class="nav-link">Configuration</a></li>
+                        <li><a href="#Staging" class="nav-link">Staging</a></li>
+                        <li><a href="#Commits" class="nav-link">Commits</a></li>
+                        <li><a href="#See_your_Repository" class="nav-link">See your Repository</a></li>
+                        <li><a href="#Retrieve_your_history" class="nav-link">Retrieve your history</a></li>
+                    </ul>
+                </li>
+                <li class="nav-heading"><a href="#Branching_and_Merging" class="nav-link nav-heading">Branching and Merging</a>
+                    <ul>
+                       <li><a href="#Create_Branch" class="nav-link">Create Branch</a></li>
+                       <li><a href="#Branch_Diverging" class="nav-link">Branch Diverging</a></li>
+                       <li><a href="#Merge" class="nav-link">Merge</a></li>
+                       <li><a href="#Rebase" class="nav-link">Rebase</a></li>
+                    </ul>
+                </li>
+                <li class="nav-heading"><a href="#Working_with_remote_repository" class="nav-link nav-heading">Working with remote repository</a>
+                    <ul>
+                       <li><a href="#Add_a_remote" class="nav-link">Add a remote </a></li>
+                       <li><a href="#Diverging_with_remote" class="nav-link">Diverging with remote </a></li>
+                    </ul>
+                </li>
+                <li class="nav-heading">
+                    <a href="#refrences" class="nav-link nav-heading">Refrences</a>
+                </li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Git_Model">
+                <header>
+                    <h1>Git Model</h1>
+                </header>
+                <p>Diagram of git model</p>
+                <article>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-overview.svg" alt="git object image" id="git-img">
+                    <header id="Object_&_SHA1"><h1>Object & SHA1</h1></header>
+                    <ul>
+                        <li>Each object has a type, a size and a content</li><br>
+                        <li>Each object is identified by a 40-digit SHA1 hash of attributes
+                            <ul>
+                                <li class="sha-1">6ff87c4664981e4397625791c8ea3bbb5f2279a3</li>
+                            </ul>
+                        </li><br>
+                        <li>Each SHA1 can be shortened to the first digits
+                            <ul>
+                                <li class="sha-1">6ff87c4664981e4397625</li>
+                                <li class="sha-1">6ff87c4</li>
+                            </ul>
+                        </li><br>
+                        <li>Object type can be blob, tree, commit or tag</li>
+                    </ul>
+                </article><br>
+                <article><header id="Blob"><h1>Blob</h1></header>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-blob.svg" alt="blob" id="box-img">
+                    <ul>
+                        <li>Used to store file data</li><br>
+                        <li>Same content = same SHA1 = same blob</li><br>
+                        <li>See it as a file</li>
+                    </ul>
+                </article><br>
+                <article><header id="Tree"><h1>Tree</h1></header>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-tree.svg" alt="tree" id="box-img">
+                    <ul>
+                        <li>Associate names to blobs and other trees</li><br>
+                        <li>See it as a directory</li>
+                    </ul>
+                </article><br>
+                <article><header id="Commit"><h1>Commit</h1></header>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-commit.svg" alt="commit" id="box-img">
+                    <ul>
+                        <li>Used to snapshot a tree state</li><br>
+                        <li>Has tree, parent(s), author, commiter and comment attributes</li><br>
+                        <li>Not the same as SVN ones:
+                            <ul>
+                                <li>SVN store diffs</li>
+                                <li>GIT store full state</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article><br>
+                <article><header id="Tags"><h1>Tags</h1></header>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-tag.svg" alt="tags" id="box-img">
+                    <ul>
+                        <li>Reference an object</li><br>
+                        <li>Has object, type, tagger and comment attributes.</li><br>
+                        <li>Not used for lightweight tags
+                            <ul>
+                                <li>Simple pointer on a commit (like branches)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article><br>
+                <article><header id="Branch"><h1>Branch</h1></header>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg" alt="branch" id="branch-img">
+                    <ul>
+                        <li>A branch is simply a pointer to a certain commit.</li><br>
+                        <li>A branch is not aa GIT object (no SHA1)</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Basic_Operations">
+                <header>
+                  <h1>Basic Operations</h1>  
+                </header><br>
+                <article><header id="Configuration"><h1>Configuration</h1></header>
+                    <p>Set your name and email:</p>
+                    <pre><code>$ git config --global core.name "Me"<br>$ git config --global core.email "me@company.com"></code></pre>
+                    <p>Display your config</p>
+                    <pre><code>$ git config --global<br>$ git config --local  # in a repository</code></pre>
+                </article><br>
+                <article ><header id="Staging"><h1>Staging</h1></header>
+                    <p>Stage your changes:</p>
+                    <pre><code># Add to index / stage<br>$ git add file.txt<br># Add all modified and new files (tracked or not) to index<br>$ git add -A<br># Partial staging<br>$ git add -p file.txt</code></pre>
+                </article><br>
+                <article ><header id="Commits"><h1>Commits</h1></header>
+                    <p>Create a commit into the current branch:</p>
+                    <pre><code># Commit from index<br>$ git commit <br># Commit from tracked file list <br>$ git commit file1.txt file2.txt <br># All modified tracked files <br>$ git commit -a <br># Commit from pattern <br>$ git commit **/*.py</code></pre>
+                </article><br>
+                <article><header id="See_your_Repository"><h1>See your repository</h1></header>
+                    <p>See the current status:</p>
+                    <pre><code>$ git status</code></pre>
+                </article><br>
+                <article><header id="Retrieve_your_history"><h1>Retrieve your history</h1></header>
+                    <pre><code># Log integral <br>$ git log <br># 5 dernier commits <br>$ git log -5 <br># Diff between two branches<br>$ git log origin/master..master</code></pre>
+                </article>
+            </section>
+            <section class="main-section" id="Branching_and_Merging">
+                <header>
+                    <h1>Branching and Merging</h1>
+                </header><br>
+                <article><header id="Create_Branch"><h1>Create a branch</h1></header>
+                    <pre><code>$ git branch feature     # Create the branch<br>$ git checkout feature   # Switch to the new branch <br># or in a single command <br>$ git checkout -b feature</code></pre>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-branch-create.svg" alt="branch creation" id="branch-img">
+                </article>
+                <article><header id="Branch_Diverging"><h1>Branch diverging</h1></header>
+                    <p>Branches diverge when they have different commits</p>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-branch-diverge.svg" alt="branch diverging" id="branch-img1">
+                </article><br>
+                <article><header id="Merge"><h1>Merge</h1></header>
+                    <p>Create a merge commit and keep your branch history:</p>
+                    <pre><code>$ git merge feature</code></pre>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-branch-merge.svg" alt="merge" id="branch-img1">
+                </article><br>
+                <article><header id="Rebase"><h1>Rebase</h1></header>
+                    <p>Re-apply your commits and keeps your history linear:</p>
+                    <pre><code>$ git rebase master <br># or interactive version<br>$ git rebase -i master</code></pre>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-branch-rebase.svg" alt="rebase" id="branch-img1">
+                </article>
+            </section>
+            <section class="main-section" id="Working_with_remote_repository">
+                <header>
+                    <h1>Working with Remote Repository</h1>  
+                </header>
+                <ul>
+                    <li>It's only branches</li>
+                    <li>Repository synchronization operations:</li>
+                </ul><br>
+                <pre><code>$ git fetch <br>$ git push <br>$ git pull  # fetch + merge <br>$ git pull --rebase  # fetch + rebase</code></pre>
+                <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-flows.svg" alt="remote repository" id="box-img1">
+                <br>
+                <article><header id="Add_a_remote"><h1>Add a remote</h1></header>
+                <pre><code>$git remote add origin git://somewhere.git <br>$git fetch</code></pre>
+                <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-remote.svg" alt="add remote" id="branch-img1">
+                </article><br>
+                <article><header id="Diverging_with_remote"><h1>Diverging with remote</h1></header>
+                    <p>It’s just more branches !</p>
+                    <img src="https://illustrated-git.readthedocs.io/en/latest/_images/git-branch-diverge-remote.svg" alt="diverging with remote" id="branch-img1">
+                </article>
+            </section>
+            <section class="main-section" id="refrences">
+                <header>
+                    <h1>Refrences</h1>
+                </header>
+                <ul>
+               <li><a href="http://book.git-scm.com/">Git Community Book</a></li>
+                <li><a href="http://help.github.com/">Github Documentation</a></li>
+                </ul>
+            </section>
+        </main>
+        <footer id="footer">© 2020 Arham Shah</footer>
+    </div>
+</body>
+</html>

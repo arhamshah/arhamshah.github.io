@@ -1,0 +1,95 @@
+*{
+   box-sizing: border-box;
+   margin:0;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    background: linear-gradient(35deg, #7b4397e5, #dc2430e3),url("https://prccustomresearch.com/wp-content/uploads/2019/Blog_Images/image-1200x627.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner{
+    background-color: rgba(255, 255, 255, 0.842);
+    width: 90%;
+    max-width: 1000px;
+    min-width: auto;
+    height: 90vh;
+    border-radius: 40px;
+    padding: 16px 16px;
+    overflow-y: scroll;
+}
+#title{
+    text-align: center;
+    font-weight: 500;
+    color: #dc2430e3;
+}
+#description{
+    text-align: center;
+    color: #7b4397e5;
+}
+#survey-form{
+    font-size: larger;
+    font-weight: 500;
+    color: #dc2430;
+}
+#banner1 input{
+    width: 30vw;
+    min-width: 300px;
+    height: 30px;
+    border: none;
+}
+#banner1 select{
+    width: 30vw;
+    min-width: 300px;
+    height: 30px;
+    border: none;
+}
+#banner1{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#banner2{
+    margin-top: 20px;
+    padding-left: 1vw;
+}
+#b2-s1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+#b2-heading{
+    font-weight: normal;
+}
+#b2-s2{
+    text-align: left;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+#text-label{
+    min-width: 200px;
+    max-width: 100%;
+    border: 1px solid black;
+    background-color: rgba(241, 234, 234, 0.534);
+    border-radius: 10px;
+}
+#submit{
+    background: linear-gradient(35deg, #7b4397e5, #dc2430e3);
+    border-radius: 6px;
+    color: rgb(236, 230, 230);
+    height: 30px;
+    border: none;
+    display: block;
+    margin: auto;
+    font-weight: 600;
+}
+#banner::-webkit-scrollbar{
+    display: none;
+}
+#banner{
+    -ms-overflow-style:none;
+}

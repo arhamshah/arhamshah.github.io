@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div id="banner">
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Please provide your valuable feedback</p>
+        <form action="" id="survey-form">
+            <div id="banner1">
+                <div id="b1-s1">
+                    <div>
+                        <label id="name-label" for="name">Name*</label><br>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label id="email-label" for="email">Email*</label><br>
+                        <input type="email" name="email" id="email" placeholder="Enter your email id" required>
+                    </div>
+                </div>
+                <div id="b1-s2">
+                    <div>
+                        <label id="number-label" for="number">Age</label><br>
+                        <input type="number" min="1" max="115" id="number" placeholder="Enter valid age">
+                    </div>
+                    <div>
+                        <label for="dropdown">Gender*</label><br>
+                        <select name="gender" id="dropdown">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Others</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="banner2">
+                <div id="b2-s1">
+                    <label>Please rate our Services*</label><br>
+                    <label for="radio-label1">1★</label>
+                    <input type="radio" name="rating" value="1" id="radio-label1">
+                    <label for="radio-label2">2★</label>
+                    <input type="radio" name="rating" value="2" id="radio-label2">
+                    <label for="radio-label3">3★</label>
+                    <input type="radio" name="rating" value="3" id="radio-label3">
+                    <label for="radio-label4">4★</label>
+                    <input type="radio" name="rating" value="4" id="radio-label4">
+                    <label for="radio-label5">5★</label>
+                    <input type="radio" name="rating" value="5" id="radio-label5" checked>
+                </div>
+                <div id="b2-s2">
+                    <label><span id="b2-heading">What do you like the most?</span></label><br>
+                    <input type="checkbox" name="option" value="op1" id="chkbox-label1">
+                    <label for="chkbox-label1">Service</label><br>
+                    <input type="checkbox" name="option" value="op2"id="chkbox-label2">
+                    <label for="chkbox-label2">Price</label><br>
+                    <input type="checkbox" name="option" value="op3" id="chkbox-label3">
+                    <label for="chkbox-label3">Quality</label><br>
+                    <input type="checkbox" name="option" value="op4" id="chkbox-label4">
+                    <label for="chkbox-label4">Packaging</label><br>
+                    <input type="checkbox" name="option" value="op5" id="chkbox-label5">
+                    <label for="chkbox-label5">Shipping</label><br>
+                    <input type="checkbox" name="option" value="op6" id="chkbox-label6">
+                    <label for="chkbox-label6">All</label><br>
+                </div>
+                <div id="b2-s3">
+                    <label for="text-label">Message us</label><br>
+                    <textarea name="message" cols="120" rows="10" id="text-label" placeholder="Write us"></textarea>
+                </div>
+            </div><br>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
